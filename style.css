@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@200&family=Megrim&display=swap');
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+body {
+    position: relative;
+    font-family: "DM Sans", sans-serif;
+    background-color: var(--black-text);
+    color: var(--white-text);
+    line-height: 1.5;
+    min-height: 300vh;
+    scroll-snap-type: y mandatory;
+}
+
+html[data-theme='daytime'] body {
+
+}
+:root {
+    --black-text:black;
+    --white-text:white;
+    --main-color: #c9a3ff;
+    --hover-color: #EEEC6B;
+    --header-bg: #fff;
+    --header-text-color: #2d343e; /* #443C33*/
+    --footer-bg: #2c353e;
+    font-size: 16px;
+    --custom-block-padding: 150px 10%;
+    --transition: .3s ease-in-out;
+    --border-radius: 50%;
+    --btn-border-radius: 6px;
+}
+
+
+
+html[data-theme='daytime'] {
+    --black-text:white;
+    --white-text: black;
+}
+
+.btn{
+    border-radius: var(--btn-border-radius);
+    padding: 1.25rem 1.75rem;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+a.btn-primary {
+    color: var(--main-color);
+    background-color: transparent ;
+    border-color: var(--main-color);
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+   margin-right: 20px;
+}
+
+html[data-theme='daytime'] a.btn-primary{
+    color: var(--white-text);
+    background-color: transparent ;
+    border-color: var(--white-text);
+}
+
+ a.btn-primary:hover{
+    background-color:var(--main-color);
+    color: var(--black-text);
+    border-color: var(--main-color);
+}
+
+html[data-theme='daytime'] .btn-secondary {
+color: var(--black-text);
+}
+
+.btn-secondary {
+    color: var(--black-text);
+    background-color: var(--main-color);
+    border-color:var(--main-color);
+}
+
+
+ .navbar-dark .navbar-nav .nav-link:hover , a:hover{
+    color: var(--main-color);
+}
+
+/**logo**/
+#logo {
+   font-family: 'Megrim','Encode Sans Expanded', sans-serif;;
+    transition: ease-in-out .5s;
+
+}
+
+#logo span {
+    display: inline-block;
+    font-size: 50px;
+    margin: -1px;
+
+}
+
+.flip_H {
+    transition: .3s ease-in-out;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+#logo:hover .flip_H {
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+
+/*Nav Bar*/
+/*nighttime*/
+
+.navbar-dark .navbar-nav .nav-link, .navbar-dark #logo  {color: var(--white-text);}
+/*daytime*/
+
+
+
+.navbar {padding: 20px 40px;}
+ul.navbar-nav a {
+    font-family: "brandon-grotesque", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: var(--header-text-color);
+
+    transition: var(--transition);
+}
+
+
+#hero{
+    width: 100%;
+    height:100vh;
+}
+
+#hero{
+    background: linear-gradient(
+                       0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,.3) 100%) , url('matt-gross-RO3-oMM3s8A-unsplash.jpg')no-repeat center/cover;
+}
+
+html[data-theme='daytime'] #hero {
+       background: linear-gradient(
+                   0deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,1) 100%) , url('alex-koch-vWBGy7BcAMk-unsplash.jpg') no-repeat center/cover;
+}
+
+.night-time{
+    display:none;
+}
+
+html[data-theme='daytime'] .day-time {
+    display:none;
+}
+
+html[data-theme='daytime'] .night-time {
+    display:block;
+}
+
+
+
+.home-content{
+margin: 5% 10%;
+align-items: center;
+}
+
+.avatar-container {
+    display:flex;
+    justify-content: center;
+
+    }
+
+.avatar-photo{
+       z-index: 1;
+       position: relative;
+       animation: gradient 7s ease infinite;
+       border-radius: 50%;
+       height: 300px;
+       width: 300px;
+       background: linear-gradient(
+   -45deg, var(--hover-color), #e73c7e, #23a6d5, #23d5ab);
+       background-size: 300% 300%;
+}
+
+.avatar-photo::after {
+    content: "";
+    position: absolute;
+      width: 280px;
+      height: 280px;
+      z-index: -1;
+      top: 10px;
+      left: 10px;
+    border-radius: 50%;
+   background: url('photo_2021-11-27 00.08.08.jpeg') no-repeat center/cover;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+h2{
+padding-bottom: 20px;
+}
+
+
+
+/*footer*/
+footer {
+        color: var(--main-color);
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    z-index: 60;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.contacts-container a{
+    color: var(--white-text);
+}
+.socials-container a{
+    color: var(--main-color);
+    padding-right: 20px;
+}
+
+html[data-theme='daytime'] .socials-container a svg{
+fill: var(--white-text);
+}
+
+.theme-toggle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    justify-content: flex-end;
+}
