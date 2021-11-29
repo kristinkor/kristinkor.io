@@ -14,6 +14,8 @@
         background-position: 0% 50%;
     }
 }
+
+
 *,
 *:after,
 *:before {
@@ -68,7 +70,19 @@ body {
     --btn-border-radius: 6px;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;               /* width of the entire scrollbar */
+}
 
+body::-webkit-scrollbar-track {
+  background: var(--main-color);        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid var(--main-color);  /* creates padding around scroll thumb */
+}
 
 html[data-theme='daytime'] {
     --black-text:white;
