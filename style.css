@@ -49,14 +49,10 @@ body {
     font-family: "DM Sans", sans-serif;
     background-color: var(--black-text);
     color: var(--white-text);
-
-
     scroll-snap-type: y mandatory;
 }
 
-html[data-theme='daytime'] body {
 
-}
 :root {
     --black-text:black;
     --white-text:white;
@@ -287,7 +283,8 @@ align-items: center;
 }
 @media (min-width:768px) {
     .home-content {
-        margin: 0;}
+        margin: 0;
+        }
     }
 
 @media (max-width:992px) {
@@ -295,20 +292,47 @@ align-items: center;
         height: 200px;
         width: 200px;
     }
-    .avatar-photo::after {
 
+    .avatar-photo::after {
         width: 192px;
         height: 192px;
         top: 4px;
         left: 4px;
-
     }
 }
 
 @media (max-width:768px) {
-#hero {
-height:auto;
-}
-footer{
-position: relative;}
+    #header {
+        position: relative;
+        display: flex;
+        justify-content: center;
     }
+
+    #hero {
+        height:auto;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-top: 20px;
+    }
+
+    .home-buttons .btn {
+        margin-bottom: 20px;
+        width:100%;
+    }
+
+
+    footer{
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .socials-container a {
+        padding-left:20px;
+    }
+    .contacts-container{
+    margin:10px 0;
+    }
+}
