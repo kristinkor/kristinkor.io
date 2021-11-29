@@ -42,14 +42,15 @@ time, mark, audio, video {
     list-style: none;
 }
 
-
+.navbar-dark .navbar-toggler {
+display:none;}
 body {
     position: relative;
     font-family: "DM Sans", sans-serif;
     background-color: var(--black-text);
     color: var(--white-text);
-    line-height: 1.5;
-    min-height: 300vh;
+
+
     scroll-snap-type: y mandatory;
 }
 
@@ -274,6 +275,8 @@ fill: var(--white-text);
 }
 
 .theme-toggle {
+display: flex;
+align-items: center;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -282,3 +285,30 @@ fill: var(--white-text);
     cursor: pointer;
     justify-content: flex-end;
 }
+@media (min-width:768px) {
+    .home-content {
+        margin: 0;}
+    }
+
+@media (max-width:992px) {
+    .avatar-photo {
+        height: 200px;
+        width: 200px;
+    }
+    .avatar-photo::after {
+
+        width: 192px;
+        height: 192px;
+        top: 4px;
+        left: 4px;
+
+    }
+}
+
+@media (max-width:768px) {
+#hero {
+height:auto;
+}
+footer{
+position: relative;}
+    }
