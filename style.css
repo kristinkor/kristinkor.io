@@ -16,6 +16,37 @@
 }
 
 
+
+@-webkit-keyframes color-change {
+    0% { color: var(--main-color); }
+    50% { color: purple; }
+    100% { color: pink; }
+}
+@-moz-keyframes color-change {
+    0% { color: red; }
+    50% { color: purple; }
+    100% { color: pink; }
+}
+@-ms-keyframes color-change {
+    0% { color: red; }
+    50% { color: purple; }
+    100% { color: pink; }
+}
+@-o-keyframes color-change {
+    0% { color: red; }
+    50% { color: purple; }
+    100% { color: pink; }
+}
+@keyframes color-change {
+    0% { color: red; }
+    50% { color: purple; }
+    100% { color: red; }
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--white-text);
+}
+
 *,
 *:after,
 *:before {
@@ -42,6 +73,11 @@ time, mark, audio, video {
     font: inherit;
     text-decoration: none;
     list-style: none;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .navbar-dark .navbar-toggler {
@@ -89,6 +125,26 @@ html[data-theme='daytime'] {
     --white-text: black;
 }
 
+.hidden {
+     display:none;
+}
+
+#contact, #skills {
+display:none;
+}
+
+#contact h1 {
+    -webkit-animation: color-change 3s infinite;
+    -moz-animation: color-change 3s infinite;
+    -o-animation: color-change 3s infinite;
+    -ms-animation: color-change 3s infinite;
+    animation: color-change 3s infinite;
+}
+
+#form-message-warning, #form-message-success {
+  display: none;
+  }
+
 .btn{
     border-radius: var(--btn-border-radius);
     padding: 1.25rem 1.75rem;
@@ -111,6 +167,11 @@ html[data-theme='daytime'] a.btn-primary{
     color: var(--white-text);
     background-color: transparent ;
     border-color: var(--white-text);
+}
+
+html[data-theme='daytime'] a.btn-primary:hover {
+    background-color: var(--white-text);
+    color: var(--black-text);
 }
 
  a.btn-primary:hover{
@@ -168,7 +229,8 @@ color: var(--black-text);
 /*Nav Bar*/
 /*nighttime*/
 
-.navbar-dark .navbar-nav .nav-link, .navbar-dark #logo  {color: var(--white-text);}
+.navbar-dark .navbar-nav .nav-link, .navbar-dark #logo  {color: var(--white-text);
+}
 /*daytime*/
 
 
@@ -183,17 +245,17 @@ ul.navbar-nav a {
 }
 
 
-#hero{
+main{
     width: 100%;
     height:100vh;
 }
 
-#hero{
+main{
     background: linear-gradient(
                        0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,.3) 100%) , url('matt-gross-RO3-oMM3s8A-unsplash.jpg')no-repeat center/cover;
 }
 
-html[data-theme='daytime'] #hero {
+html[data-theme='daytime'] main {
        background: linear-gradient(
                    0deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,1) 100%) , url('alex-koch-vWBGy7BcAMk-unsplash.jpg') no-repeat center/cover;
 }
@@ -208,6 +270,7 @@ html[data-theme='daytime'] .day-time {
 
 html[data-theme='daytime'] .night-time {
     display:block;
+      text-shadow: 2px 2px #ff0000;
 }
 
 
@@ -280,9 +343,14 @@ footer {
     padding-right: 20px;
 }
 
-html[data-theme='daytime'] .socials-container a svg{
-fill: var(--white-text);
+.socials-container a:hover svg, html[data-theme='daytime'] .socials-container a:hover svg{
+    fill: orange;
 }
+
+html[data-theme='daytime'] .socials-container a svg{
+    fill: var(--white-text);
+}
+
 
 .theme-toggle {
 display: flex;
@@ -295,6 +363,81 @@ align-items: center;
     cursor: pointer;
     justify-content: flex-end;
 }
+.hard-skills{
+    padding-right: 30px;
+ }
+ .hard-skills ul li, .soft-skills ul li {
+    padding-left: 1rem;
+    text-indent: -0.7rem;
+  }
+
+  .hard-skills ul li:nth-child(4n + 1)::before {
+    content: "🐱  ";
+  }
+
+ .hard-skills ul li:nth-child(4n + 2)::before {
+    content: "🐶  ";
+  }
+
+  .hard-skills ul li:nth-child(4n +3)::before {
+    content: "🦄  ";
+  }
+
+ .hard-skills ul li:nth-child(4n)::before {
+    content: "🐻  ";
+  }
+
+  .soft-skills ul li:nth-child(4n + 1)::before {
+    content: "🌿 ";
+  }
+
+  .soft-skills ul li:nth-child(4n + 2)::before {
+    content: "🍁  ";
+  }
+
+    .soft-skills ul li:nth-child(4n +3)::before {
+    content: "🍀  ";
+  }
+
+  .soft-skills ul li:nth-child(4n)::before {
+    content: "☀️  ";
+  }
+
+ .soft-skills h2 {
+    font-size: 2em;
+    line-height: 1;
+    padding-bottom: 20px;
+    font-weight: bold;
+
+ }
+
+ #skills li {
+     padding: 6px;
+    font-size: 1.2em;
+ }
+
+#contactForm input[type='submit']{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: white;
+    padding: 12px 18px;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: 6px;
+}
+
+#contactForm input[type='submit']:hover {
+    background-color: #5c636a;
+    border-color: #565e64;
+}
+
+#contact .email {
+    color: var(--white-text);
+    text-decoration: underline;
+}
+
 @media (min-width:768px) {
     .home-content {
         margin: 0;
@@ -346,6 +489,7 @@ align-items: center;
     .socials-container a {
         padding-left:20px;
     }
+
     .contacts-container{
     margin:10px 0;
     }
