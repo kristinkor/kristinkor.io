@@ -130,7 +130,7 @@ html[data-theme='daytime'] {
 }
 
 #contact, #skills {
-display:none;
+display: none !important;;
 }
 
 #contact h1 {
